@@ -65,7 +65,10 @@
 
       function getContext() {}
 
-      async function getUserProfile() {}
+      async function getUserProfile() {
+        const profile = await getProfile();
+        document.getElementById("pictureUrl").src = profile.pictureUrl;
+      }
 
       function getEnvironment() {
         document.getElementById("os").append(liff.getOS());
@@ -86,7 +89,7 @@
       async function main() {
         await liff.init({ liffId: "2001350911-ONXGApoE" });
         getEnvironment();
-        // getUserProfile()
+        getUserProfile();
         // getContext()
         // getFriendship()
         // createUniversalLink()
