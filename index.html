@@ -74,7 +74,7 @@
         document.getElementById("isInClient").append(liff.isInClient());
         document.getElementById("accessToken").append(liff.getAccessToken());
 
-        if (liff.isInClient) {
+        if (liff.isInClient()) {
           document.getElementById("#btnLogOut").style.display = "none";
         } else {
           document.getElementById("#btnMsg").style.display = "none";
