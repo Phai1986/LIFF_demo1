@@ -70,7 +70,7 @@
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         document.getElementById("userId").append(profile.userId);
         document.getElementById("displayName").append(profile.displayName);
-        document.getElementById("userId").append(profile.userId);
+        document.getElementById("statusMessage").append(profile.statusMessage);
       }
 
       function getEnvironment() {
@@ -78,7 +78,7 @@
         document.getElementById("language").append(liff.getLanguage());
         document.getElementById("version").append(liff.getVersion());
         document.getElementById("isInClient").append(liff.isInClient());
-        document.getElementById("statusMessage").append(liff.statusMessage());
+        document.getElementById("accessToken").append(liff.getAccessToken());
 
         if (liff.isInClient()) {
           document.getElementById("#btnLogOut").style.display = "none";
