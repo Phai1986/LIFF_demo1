@@ -7,15 +7,16 @@
       content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover"
     />
     <title>My LIFF app</title>
-    <link rel="stylesheet" href="css/style.css?catch=1" media="all" />
+    <link rel="stylesheet" href="css/style.css" media="all" />
   </head>
   <body>
+    <h1>LIFF app</h1>
     <p id="os"><b>OS:</b></p>
     <p id="language"><b>Language:</b></p>
     <p id="version"><b>Version:</b></p>
     <p id="isInClient"><b>isInClient:</b></p>
     <p id="accessToken"><b>AccessToken:</b></p>
-    <img id="pictureUrl" src="../" />
+    <img id="pictureUrl" width="50" src="" />
     <p id="userId"><b>userId:</b></p>
     <p id="displayName"><b>displayName:</b></p>
     <p id="statusMessage"><b>statusMessage:</b></p>
@@ -45,7 +46,7 @@
     console.log("Hello World!")
   </script> -->
 
-    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js?catch=1"></script>
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script>
       function createUniversalLink() {}
 
@@ -66,11 +67,11 @@
       function getContext() {}
 
       async function getUserProfile() {
-        const profile = await liff.getProfile();
-        document.getElementById("pictureUrl").src = profile.pictureUrl;
-        document.getElementById("userId").append(profile.userId);
-        document.getElementById("displayName").append(profile.displayName);
-        document.getElementById("statusMessage").append(profile.statusMessage);
+        // const profile = await liff.getProfile();
+        // document.querySelector('#pictureUrl').src = profile.pictureUrl;
+        // document.querySelector('#userId').append('profile.userId');
+        // document.querySelector('#displayName').append(profile.displayName);
+        // document.querySelector('#statusMessage').append(profile.statusMessage);
       }
 
       function getEnvironment() {
@@ -90,9 +91,14 @@
       }
 
       async function main() {
-        await liff.init({ liffId: "2001352772-novkPzov" });
+        await liff.init({ liffId: "2001356587-w6b274Wn" });
+        const profile = await liff.getProfile();
+        document.querySelector("#pictureUrl").src = profile.pictureUrl;
+        document.querySelector("#userId").append("profile.userId");
+        document.querySelector("#displayName").append(profile.displayName);
+        document.querySelector("#statusMessage").append(profile.statusMessage);
         getEnvironment();
-        getUserProfile();
+        // getUserProfile();
         // getContext()
         // getFriendship()
         // createUniversalLink()
