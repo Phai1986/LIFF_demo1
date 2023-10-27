@@ -68,6 +68,9 @@
       async function getUserProfile() {
         const profile = await getProfile();
         document.getElementById("pictureUrl").src = profile.pictureUrl;
+        document.getElementById("userId").append(profile.userId);
+        document.getElementById("displayName").append(profile.displayName);
+        document.getElementById("userId").append(profile.userId);
       }
 
       function getEnvironment() {
@@ -75,7 +78,7 @@
         document.getElementById("language").append(liff.getLanguage());
         document.getElementById("version").append(liff.getVersion());
         document.getElementById("isInClient").append(liff.isInClient());
-        document.getElementById("accessToken").append(liff.getAccessToken());
+        document.getElementById("statusMessage").append(liff.statusMessage());
 
         if (liff.isInClient()) {
           document.getElementById("#btnLogOut").style.display = "none";
